@@ -3,6 +3,7 @@ import { Search, User, Menu, X, Tv } from "lucide-react";
 import { useLanguage } from "../LanguageContext";
 import LanguageSwitcher from "./LanguageSwitcher";
 import AuthModal from "./AuthModal";
+import { BRAND_NAME } from "../siteConfig";
 
 const loginLabel: Record<string, string> = { de: "Anmelden", en: "Login", nl: "Inloggen" };
 
@@ -34,13 +35,12 @@ export default function Header({ langPrefix, onPricingClick, onReviewsClick, onM
         <header className="w-full border-b border-black/10" style={{ background: "#ffffff" }}>
           <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-3 flex items-center justify-between">
             <div className="flex items-center gap-3 xl:gap-5">
-              <a href={langPrefix} aria-label="TOP IPTV KAUFEN — Startseite" className="shrink-0 select-none flex items-center no-underline cursor-pointer hover:opacity-80 transition-opacity">
+              <a href={langPrefix} aria-label={BRAND_NAME} className="shrink-0 select-none flex items-center no-underline cursor-pointer hover:opacity-80 transition-opacity">
                 {/* Two-colour text wordmark: "IPTV" in the accent colour, "DEUTSCHLAND"
                     in the header foreground. The header ground is white, so the second
                     word uses the dark text colour (not white) to stay legible. */}
                 <span className="font-extrabold text-xl md:text-2xl tracking-tight leading-none whitespace-nowrap">
-                  <span style={{ color: "#facc15" }}>IPTV</span>
-                  <span className="text-black"> DEUTSCHLAND</span>
+                  <span style={{ color: "#facc15" }}>{BRAND_NAME.split(" ")[0]}</span>{BRAND_NAME.split(" ").length > 1 && (<span className="text-black"> {BRAND_NAME.split(" ").slice(1).join(" ")}</span>)}
                 </span>
               </a>
 
