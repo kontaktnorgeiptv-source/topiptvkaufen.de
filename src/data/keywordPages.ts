@@ -1,3 +1,4 @@
+import { KW_2027_PAGES } from "./kw2027Pages";
 import { SITE_URL as SITE, BRAND_NAME, WA_NUMBER } from "../siteConfig";
 import type { LangCode } from "../i18n";
 // SEO keyword landing pages. Single source of truth shared by the SPA router
@@ -50,7 +51,7 @@ const CORE_LINKS_DE =
 const GUARANTEE_DE =
   `Jedes ${BRAND} Abo enthält den vollen Sender- und VOD-Katalog, 15 Tage Geld-zurück-Garantie und 24/7 Support per [WhatsApp](${WA}).`;
 
-const RAW_KEYWORD_PAGES: KeywordPage[] = [
+const RAW_KEYWORD_PAGES: KeywordPage[] = [...KW_2027_PAGES, 
   // ── Core intent ───────────────────────────────────────────────────────────
   {
     slug: "iptv-kaufen",
